@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Matrix(n: 5, m: 6)
+        Matrix(n: 3, m: 3)
     }
 }
 
@@ -27,7 +27,7 @@ struct Matrix: View {
                 HStack {
                     ForEach(0..<m) { m in
                         
-                        Text("\(contents[n][m])")
+                        Text("\(contents[n][m])").padding(.all)
                         
                     }
                 }
