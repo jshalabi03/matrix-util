@@ -27,8 +27,7 @@ struct Matrix: View {
                 HStack {
                     ForEach(0..<m) { m in
                         
-                        Text("\(n), \(m)")
-                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                        Text("\(contents[n][m])")
                         
                     }
                 }
