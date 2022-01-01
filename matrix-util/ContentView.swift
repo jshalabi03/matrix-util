@@ -18,6 +18,8 @@ struct Matrix: View {
     private var n: Int
     private var m: Int
     
+    private var contents: [[Int]]
+    
     var body: some View {
         
         VStack {
@@ -38,6 +40,14 @@ struct Matrix: View {
     init(n: Int, m: Int) {
         self.n = n
         self.m = m
+        self.contents = [[Int]]()
+        
+        for i in 0..<n {
+            for j in 0..<n {
+                self.contents[i][j] = 0
+            }
+        }
+        
     }
     
 }
