@@ -40,7 +40,7 @@ struct Matrix: View {
         self.n = n
         self.m = m
         
-        self.contents = Array(repeating: Array(repeating: 0, count: 3), count: 3)
+        self.contents = Array(repeating: Array(repeating: 0, count: m), count: n)
         
     }
     
