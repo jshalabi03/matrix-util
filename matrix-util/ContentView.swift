@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Matrix(n: 5, m: 6, fill: 5)
+        Matrix(n: 5, m: 6)
     }
 }
 
@@ -36,19 +36,15 @@ struct Matrix: View {
         
     }
     
-    init(n: Int, m: Int) {
-        self.n = n
-        self.m = m
-        
-        self.contents = Array(repeating: Array(repeating: 0, count: m), count: n)
-        
-    }
-    
     init(n: Int, m: Int, fill: Int) {
         self.n = n
         self.m = m
         
         self.contents = Array(repeating: Array(repeating: fill, count: m), count: n)
+    }
+    
+    init(n: Int, m: Int) {
+        self.init(n: n, m: m, fill: 0)
     }
     
 }
