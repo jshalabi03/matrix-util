@@ -40,13 +40,8 @@ struct Matrix: View {
     init(n: Int, m: Int) {
         self.n = n
         self.m = m
-        self.contents = [[Int]]()
         
-        for i in 0..<n {
-            for j in 0..<n {
-                self.contents[i][j] = 0
-            }
-        }
+        self.contents = Array(repeating: Array(repeating: 0, count: 3), count: 3)
         
     }
     
