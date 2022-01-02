@@ -20,15 +20,15 @@ struct MatrixEditorMenu: View {
         HStack {
             Picker("Operation", selection: $currentOperation) {
                 Text("Fill").tag(MatrixOperation.fill)
-            }
-            TextField("Value", text: $currentValueString)
+            }.padding(.all)
+            TextField("Value", text: $currentValueString).padding(.all)
             Button("Set") {
                 currentValue = Double(currentValueString)!
                 let currRow = matrix.rows
                 let currCol = matrix.cols
                 matrix = Matrix(currRow,currCol, currentValue)
 //                matrix = executeOperation(matrix, currentOperation, currentValue)
-            }
+            }.padding(.all)
         }
     }
 }

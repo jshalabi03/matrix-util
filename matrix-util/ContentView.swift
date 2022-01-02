@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             DimensionInput(rows: $rows, cols: $cols, matrix: $matrix)
-            MatrixView(matrix: $matrix)
+            MatrixView(matrix: $matrix).padding(.all)
             MatrixEditorMenu(matrix: $matrix)
         }
     }
