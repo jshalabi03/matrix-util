@@ -12,12 +12,11 @@ struct ContentView: View {
     
     @State var rows: Int = 3
     @State var cols: Int = 3
-    @State var matrix: Matrix = Matrix(3,3)
     
     var body: some View {
         VStack {
-            DimensionInput(rows: $rows, cols: $cols, matrix: $matrix)
-            MatrixView(matrix: $matrix)
+            DimensionInput(rows: $rows, cols: $cols)
+            MatrixView(rows, cols)
 //            Text("Rows: \(rows + 10), Cols: \(cols + 10)")
         }
     }

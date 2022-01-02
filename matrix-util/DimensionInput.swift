@@ -13,7 +13,6 @@ public struct DimensionInput: View {
     
     @Binding var rows: Int
     @Binding var cols: Int
-    @Binding var matrix: Matrix
     
     @State var rowString: String = ""
     @State var colString: String = ""
@@ -25,7 +24,6 @@ public struct DimensionInput: View {
             Button("Set", action: {
                 rows = Int(rowString)!
                 cols = Int(colString)!
-                matrix = Matrix(rows, cols)
             })
         }
     }
