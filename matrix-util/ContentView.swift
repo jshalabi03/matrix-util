@@ -9,10 +9,11 @@ import SwiftUI
 import LASwift
 
 struct ContentView: View {
-    var n = 5.3423423
+    @State var rows: Int = 3
+    @State var cols: Int = 3
     var body: some View {
         VStack {
-            MatrixView(3,3)
+            MatrixView(rows, cols)
         }
     }
 }
