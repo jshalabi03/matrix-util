@@ -11,13 +11,13 @@ import LASwift
 
 public struct MatrixView: View {
     
-    var matrix: Matrix
+    @Binding var matrix: Matrix
     
     public var body: some View {
         VStack {
-            ForEach(0..<matrix.rows) {one in
+            ForEach(0..<matrix.rows, id: \.self) {one in
                 HStack {
-                    ForEach(0..<matrix.cols) {two in
+                    ForEach(0..<matrix.cols, id: \.self) {two in
                         Text("\(matrix[one, two], specifier: "%.2f")")
                     }
                 }
@@ -25,7 +25,7 @@ public struct MatrixView: View {
         }
     }
     
-    init(_ rows: Int, _ cols: Int, fill: Double = 0) {
-        self.matrix = Matrix(rows, cols, fill)
-    }
+//    init(_ rows: Int, _ cols: Int, fill: Double = 0) {
+//        self.matrix = Matrix(rows, cols, fill)
+//    }
 }

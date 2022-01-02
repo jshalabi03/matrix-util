@@ -7,14 +7,16 @@
 
 import Foundation
 import SwiftUI
+import LASwift
 
 public struct DimensionInput: View {
     
     @Binding var rows: Int
     @Binding var cols: Int
+    @Binding var matrix: Matrix
     
-    @State var rowString: String = "2"
-    @State var colString: String = "2"
+    @State var rowString: String = ""
+    @State var colString: String = ""
     
     public var body: some View {
         HStack {
@@ -23,6 +25,7 @@ public struct DimensionInput: View {
             Button("Set", action: {
                 rows = Int(rowString)!
                 cols = Int(colString)!
+                matrix = Matrix(rows, cols)
             })
         }
     }
