@@ -14,6 +14,7 @@
 		E741B84527810A63000B7D37 /* matrix_utilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B84427810A63000B7D37 /* matrix_utilTests.swift */; };
 		E741B84F27810A63000B7D37 /* matrix_utilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B84E27810A63000B7D37 /* matrix_utilUITests.swift */; };
 		E741B85127810A63000B7D37 /* matrix_utilUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B85027810A63000B7D37 /* matrix_utilUITestsLaunchTests.swift */; };
+		E741B89B27813964000B7D37 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B89A27813964000B7D37 /* Matrix.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E741B84A27810A63000B7D37 /* matrix-utilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "matrix-utilUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E741B84E27810A63000B7D37 /* matrix_utilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_utilUITests.swift; sourceTree = "<group>"; };
 		E741B85027810A63000B7D37 /* matrix_utilUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_utilUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E741B89A27813964000B7D37 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				E741B83527810A62000B7D37 /* ContentView.swift */,
 				E741B83727810A63000B7D37 /* Assets.xcassets */,
 				E741B83927810A63000B7D37 /* Preview Content */,
+				E741B89A27813964000B7D37 /* Matrix.swift */,
 			);
 			path = "matrix-util";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				E741B83627810A62000B7D37 /* ContentView.swift in Sources */,
 				E741B83427810A62000B7D37 /* matrix_utilApp.swift in Sources */,
+				E741B89B27813964000B7D37 /* Matrix.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
