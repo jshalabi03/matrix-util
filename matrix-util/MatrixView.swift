@@ -11,7 +11,7 @@ import LASwift
 
 public struct MatrixView: View {
     
-    var matrix: Matrix
+    @Binding var matrix: Matrix
     
     public var body: some View {
         VStack {
@@ -25,7 +25,7 @@ public struct MatrixView: View {
         }
     }
     
-    init(_ rows: Int, _ cols: Int, fill: Double = 0) {
-        self.matrix = Matrix(rows, cols, fill)
-    }
+//    init(_ rows: Int, _ cols: Int, fill: Double = 0) {
+//        self.matrix = Matrix(rows, cols, fill)
+//    }
 }
