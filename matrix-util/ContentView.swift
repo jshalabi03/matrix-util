@@ -9,8 +9,11 @@ import SwiftUI
 import LASwift
 
 struct ContentView: View {
+    var n = 5.3423423
     var body: some View {
-        MatrixView(3,3)
+        VStack {
+            MatrixView(3,3)
+        }
     }
 }
 

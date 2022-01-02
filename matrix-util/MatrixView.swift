@@ -18,7 +18,7 @@ public struct MatrixView: View {
             ForEach(0..<matrix.rows) {one in
                 HStack {
                     ForEach(0..<matrix.cols) {two in
-                        Text("\(matrix[row: one][two])")
+                        Text("\(matrix[one, two], specifier: "%.2f")")
                     }
                 }
             }
