@@ -10,7 +10,7 @@ import LASwift
 
 struct ContentView: View {
     var body: some View {
-        MatrixView()
+        MatrixView(3,3)
     }
 }
 

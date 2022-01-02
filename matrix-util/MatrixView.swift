@@ -11,9 +11,21 @@ import LASwift
 
 public struct MatrixView: View {
     
-    var matrix: Matrix = Matrix(3,3)
+    var matrix: Matrix
     
     public var body: some View {
-        Text("Test")
+        VStack {
+            ForEach(0..<matrix.rows) {one in
+                HStack {
+                    ForEach(0..<matrix.cols) {two in
+                        Text("\(matrix[row: one][two])")
+                    }
+                }
+            }
+        }
+    }
+    
+    init(_ rows: Int, _ cols: Int, fill: Double = 0) {
+        self.matrix = Matrix(rows, cols, fill)
     }
 }
