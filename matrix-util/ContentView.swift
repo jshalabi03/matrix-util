@@ -18,7 +18,7 @@ struct ContentView: View {
         VStack {
             DimensionInput(rows: $rows, cols: $cols, matrix: $matrix)
             MatrixView(matrix: $matrix)
-//            Text("Rows: \(rows + 10), Cols: \(cols + 10)")
+            MatrixEditorMenu(matrix: $matrix)
         }
     }
 }
