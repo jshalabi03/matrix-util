@@ -12,12 +12,21 @@ import LASwift
 struct MatrixEditorMenu: View {
     
     @Binding var matrix: Matrix
+    @State var currentOperation: MatrixOperation = MatrixOperation.none
+    @State var currentValue: Double = 0
+    @State var currentValueString: String = ""
     
     var body: some View {
-        Menu("Operations") {
-            Button("Test") {
-                
+        HStack {
+            Picker("Operation", selection: $currentOperation) {
+                Text("Fill").tag(MatrixOperation.fill)
             }
+            TextField("Value", text: $currentValueString)
+            Button("Set") {
+                currentValue = Double(currentValueString)!
+//                matrix = executeOperation(matrix, currentOperation, currentValue)
+            }
+            Text("cur: \(currentValue)")
         }
     }
 }

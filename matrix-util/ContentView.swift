@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var rows: Int = 3
     @State var cols: Int = 3
     @State var matrix: Matrix = Matrix(3,3)
+    @State var currentOperation: String = ""
     
     var body: some View {
         VStack {

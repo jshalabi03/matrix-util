@@ -19,6 +19,7 @@
 		E741B8A5278232D8000B7D37 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B8A4278232D8000B7D37 /* Util.swift */; };
 		E741B8A727823481000B7D37 /* DimensionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B8A627823481000B7D37 /* DimensionInput.swift */; };
 		E741B8AB278243BC000B7D37 /* MatrixEditorMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B8AA278243BC000B7D37 /* MatrixEditorMenu.swift */; };
+		E741B8AF278245DC000B7D37 /* MatrixOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B8AE278245DC000B7D37 /* MatrixOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		E741B8A4278232D8000B7D37 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		E741B8A627823481000B7D37 /* DimensionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionInput.swift; sourceTree = "<group>"; };
 		E741B8AA278243BC000B7D37 /* MatrixEditorMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixEditorMenu.swift; sourceTree = "<group>"; };
+		E741B8AE278245DC000B7D37 /* MatrixOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				E741B8A4278232D8000B7D37 /* Util.swift */,
 				E741B8A627823481000B7D37 /* DimensionInput.swift */,
 				E741B8AA278243BC000B7D37 /* MatrixEditorMenu.swift */,
+				E741B8AE278245DC000B7D37 /* MatrixOperation.swift */,
 			);
 			path = "matrix-util";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			files = (
 				E741B83627810A62000B7D37 /* ContentView.swift in Sources */,
 				E741B83427810A62000B7D37 /* matrix_utilApp.swift in Sources */,
+				E741B8AF278245DC000B7D37 /* MatrixOperation.swift in Sources */,
 				E741B8A027819172000B7D37 /* MatrixView.swift in Sources */,
 				E741B8A5278232D8000B7D37 /* Util.swift in Sources */,
 				E741B8AB278243BC000B7D37 /* MatrixEditorMenu.swift in Sources */,
