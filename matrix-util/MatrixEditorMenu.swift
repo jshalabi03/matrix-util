@@ -24,9 +24,11 @@ struct MatrixEditorMenu: View {
             TextField("Value", text: $currentValueString)
             Button("Set") {
                 currentValue = Double(currentValueString)!
+                let currRow = matrix.rows
+                let currCol = matrix.cols
+                matrix = Matrix(currRow,currCol, currentValue)
 //                matrix = executeOperation(matrix, currentOperation, currentValue)
             }
-            Text("cur: \(currentValue)")
         }
     }
 }
