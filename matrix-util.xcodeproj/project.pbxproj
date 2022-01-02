@@ -14,7 +14,8 @@
 		E741B84527810A63000B7D37 /* matrix_utilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B84427810A63000B7D37 /* matrix_utilTests.swift */; };
 		E741B84F27810A63000B7D37 /* matrix_utilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B84E27810A63000B7D37 /* matrix_utilUITests.swift */; };
 		E741B85127810A63000B7D37 /* matrix_utilUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B85027810A63000B7D37 /* matrix_utilUITestsLaunchTests.swift */; };
-		E741B89B27813964000B7D37 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B89A27813964000B7D37 /* Matrix.swift */; };
+		E741B8A027819172000B7D37 /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B89F27819172000B7D37 /* MatrixView.swift */; };
+		E741B8A3278191F0000B7D37 /* LASwift in Frameworks */ = {isa = PBXBuildFile; productRef = E741B8A2278191F0000B7D37 /* LASwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,7 @@
 		E741B84A27810A63000B7D37 /* matrix-utilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "matrix-utilUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E741B84E27810A63000B7D37 /* matrix_utilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_utilUITests.swift; sourceTree = "<group>"; };
 		E741B85027810A63000B7D37 /* matrix_utilUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_utilUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E741B89A27813964000B7D37 /* Matrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		E741B89F27819172000B7D37 /* MatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E741B8A3278191F0000B7D37 /* LASwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +102,7 @@
 				E741B83527810A62000B7D37 /* ContentView.swift */,
 				E741B83727810A63000B7D37 /* Assets.xcassets */,
 				E741B83927810A63000B7D37 /* Preview Content */,
-				E741B89A27813964000B7D37 /* Matrix.swift */,
+				E741B89F27819172000B7D37 /* MatrixView.swift */,
 			);
 			path = "matrix-util";
 			sourceTree = "<group>";
@@ -146,6 +148,9 @@
 			dependencies = (
 			);
 			name = "matrix-util";
+			packageProductDependencies = (
+				E741B8A2278191F0000B7D37 /* LASwift */,
+			);
 			productName = "matrix-util";
 			productReference = E741B83027810A62000B7D37 /* matrix-util.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +223,9 @@
 				Base,
 			);
 			mainGroup = E741B82727810A62000B7D37;
+			packageReferences = (
+				E741B8A1278191F0000B7D37 /* XCRemoteSwiftPackageReference "LASwift" */,
+			);
 			productRefGroup = E741B83127810A62000B7D37 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,7 +270,7 @@
 			files = (
 				E741B83627810A62000B7D37 /* ContentView.swift in Sources */,
 				E741B83427810A62000B7D37 /* matrix_utilApp.swift in Sources */,
-				E741B89B27813964000B7D37 /* Matrix.swift in Sources */,
+				E741B8A027819172000B7D37 /* MatrixView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E741B8A1278191F0000B7D37 /* XCRemoteSwiftPackageReference "LASwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexandertar/LASwift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E741B8A2278191F0000B7D37 /* LASwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E741B8A1278191F0000B7D37 /* XCRemoteSwiftPackageReference "LASwift" */;
+			productName = LASwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E741B82827810A62000B7D37 /* Project object */;
 }

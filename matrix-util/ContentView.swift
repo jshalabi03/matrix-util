@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import LASwift
 
 struct ContentView: View {
     var body: some View {
-        Text("test")
+        MatrixView()
     }
 }
 
