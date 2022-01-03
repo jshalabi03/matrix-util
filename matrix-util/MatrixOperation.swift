@@ -28,4 +28,5 @@ func executeOperation(_ matrix: Matrix, _ operation: MatrixOperation, _ value: D
         let res: Matrix = Matrix(matrix.rows, matrix.cols, value)
         return res
     }
+    
 }

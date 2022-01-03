@@ -12,13 +12,21 @@ import LASwift
 public struct MatrixView: View {
     
     @Binding var matrix: Matrix
+    @Binding var contents: [String]
     
     public var body: some View {
         VStack {
-            ForEach(0..<matrix.rows, id: \.self) {one in
+            ForEach(0..<matrix.rows, id: \.self) {row in
                 HStack {
-                    ForEach(0..<matrix.cols, id: \.self) {two in
-                        Text("\(matrix[one, two], specifier: "%.2f")")
+                    ForEach(0..<matrix.cols, id: \.self) {col in
+//                        Text("\(matrix[row, col], specifier: "%.2f")")
+                        TextField(" ", text: $contents[row * matrix.cols + col], onEditingChanged: {_ in
+                            for i in 0..<contents.count {
+                                if let value = Double(contents[i]) {
+                                    matrix[i] = value
+                                }
+                            }
+                        })
                     }
                 }
             }

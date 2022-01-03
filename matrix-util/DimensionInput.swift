@@ -12,6 +12,7 @@ import LASwift
 public struct DimensionInput: View {
     
     @Binding var matrix: Matrix
+    @Binding var contents: [String]
     
     @State var rowString: String = ""
     @State var colString: String = ""
@@ -24,6 +25,7 @@ public struct DimensionInput: View {
                 let rows = Int(rowString)!
                 let cols = Int(colString)!
                 matrix = Matrix(rows, cols)
+                contents = Array(repeating: "0", count: rows * cols)
             }).padding(.all)
         }
     }

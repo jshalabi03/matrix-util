@@ -12,6 +12,7 @@ import LASwift
 struct MatrixEditorMenu: View {
     
     @Binding var matrix: Matrix
+    @Binding var contents: [String]
     @State var currentOperation: MatrixOperation = MatrixOperation.none
     @State var currentValueString: String = ""
     
@@ -23,11 +24,12 @@ struct MatrixEditorMenu: View {
             TextField("Value", text: $currentValueString).padding(.all)
             Button("Set") {
                 let currentValue = Double(currentValueString)!
-//                let currRow = matrix.rows
-//                let currCol = matrix.cols
                 let matrixRes = executeOperation(matrix, currentOperation, currentValue)
                 matrix = matrixRes
-//                matrix = executeOperation(matrix, currentOperation, currentValue)
+                contents = Array(repeating: "0", count: matrix.flat.count)
+                for i in 0..<contents.count {
+                    contents[i] = String(matrix[i])
+                }
             }.padding(.all)
         }
     }

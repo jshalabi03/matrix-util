@@ -11,12 +11,13 @@ import LASwift
 struct ContentView: View {
     
     @State var matrix: Matrix = Matrix(3,3)
+    @State var contents: [String] = Array(repeating: "0", count: 9)
     
     var body: some View {
         VStack {
-            DimensionInput(matrix: $matrix)
-            MatrixView(matrix: $matrix)
-            MatrixEditorMenu(matrix: $matrix)
+            DimensionInput(matrix: $matrix, contents: $contents)
+            MatrixView(matrix: $matrix, contents: $contents)
+            MatrixEditorMenu(matrix: $matrix, contents: $contents)
         }
     }
 }
