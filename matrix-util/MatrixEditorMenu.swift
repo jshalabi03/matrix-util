@@ -18,11 +18,14 @@ struct MatrixEditorMenu: View {
     
     var body: some View {
         HStack {
+            
             Picker("Operation", selection: $currentOperation) {
                 Text("Fill").tag(MatrixOperation.fill)
                 Text("Invert").tag(MatrixOperation.invert)
             }.padding(.all)
+            
             TextField("Value", text: $currentValueString).padding(.all)
+            
             Button("Set") {
                 let currentValue = Double(currentValueString)!
                 let matrixRes = executeOperation(matrix, currentOperation, currentValue)
