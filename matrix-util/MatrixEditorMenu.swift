@@ -32,7 +32,7 @@ struct MatrixEditorMenu: View {
                 matrix = matrixRes
                 contents = Array(repeating: "0", count: matrixRes.rows * matrixRes.cols)
                 for i in 0..<contents.count {
-                    contents[i] = String(matrixRes[i])
+                    contents[i] = String(format: "%.2f", matrixRes[i])
                 }
             }.padding(.all)
         }
