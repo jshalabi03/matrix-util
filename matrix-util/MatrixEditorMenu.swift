@@ -13,7 +13,7 @@ struct MatrixEditorMenu: View {
     
     @Binding var matrix: Matrix
     @Binding var contents: [String]
-    @State var currentOperation: MatrixOperation = MatrixOperation.none
+    @State var currentOperation: MatrixOperation = MatrixOperation.fill
     @State var currentValueString: String = ""
     
     var body: some View {
