@@ -19,7 +19,7 @@ public struct MatrixView: View {
             ForEach(0..<matrix.rows, id: \.self) {row in
                 HStack {
                     ForEach(0..<matrix.cols, id: \.self) {col in
-                        TextField(" ", text: $contents[row * matrix.cols + col], onCommit: {
+                        TextField(" ", text: $contents[row * matrix.cols + col], onEditingChanged: {_ in
                             for i in 0..<contents.count {
                                 if let value = Double(contents[i]) {
                                     matrix[i] = value
