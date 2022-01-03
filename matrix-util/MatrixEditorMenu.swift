@@ -13,7 +13,6 @@ struct MatrixEditorMenu: View {
     
     @Binding var matrix: Matrix
     @State var currentOperation: MatrixOperation = MatrixOperation.none
-    @State var currentValue: Double = 0
     @State var currentValueString: String = ""
     
     var body: some View {
@@ -23,10 +22,11 @@ struct MatrixEditorMenu: View {
             }.padding(.all)
             TextField("Value", text: $currentValueString).padding(.all)
             Button("Set") {
-                currentValue = Double(currentValueString)!
-                let currRow = matrix.rows
-                let currCol = matrix.cols
-                matrix = Matrix(currRow,currCol, currentValue)
+                let currentValue = Double(currentValueString)!
+//                let currRow = matrix.rows
+//                let currCol = matrix.cols
+                let matrixRes = executeOperation(matrix, currentOperation, currentValue)
+                matrix = matrixRes
 //                matrix = executeOperation(matrix, currentOperation, currentValue)
             }.padding(.all)
         }
