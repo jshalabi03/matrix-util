@@ -11,8 +11,6 @@ import LASwift
 
 public struct DimensionInput: View {
     
-    @Binding var rows: Int
-    @Binding var cols: Int
     @Binding var matrix: Matrix
     
     @State var rowString: String = ""
@@ -23,8 +21,8 @@ public struct DimensionInput: View {
             TextField("Rows", text: $rowString).padding(.all)
             TextField("Columns", text: $colString).padding(.all)
             Button("Set", action: {
-                rows = Int(rowString)!
-                cols = Int(colString)!
+                let rows = Int(rowString)!
+                let cols = Int(colString)!
                 matrix = Matrix(rows, cols)
             }).padding(.all)
         }

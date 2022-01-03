@@ -10,14 +10,12 @@ import LASwift
 
 struct ContentView: View {
     
-    @State var rows: Int = 3
-    @State var cols: Int = 3
     @State var matrix: Matrix = Matrix(3,3)
     @State var currentOperation: String = ""
     
     var body: some View {
         VStack {
-            DimensionInput(rows: $rows, cols: $cols, matrix: $matrix)
+            DimensionInput(matrix: $matrix)
             MatrixView(matrix: $matrix).padding(.all)
             MatrixEditorMenu(matrix: $matrix)
         }
