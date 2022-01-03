@@ -19,8 +19,7 @@ public struct MatrixView: View {
             ForEach(0..<matrix.rows, id: \.self) {row in
                 HStack {
                     ForEach(0..<matrix.cols, id: \.self) {col in
-//                        Text("\(matrix[row, col], specifier: "%.2f")")
-                        TextField(" ", text: $contents[row * matrix.cols + col], onEditingChanged: {_ in
+                        TextField(" ", text: $contents[row * matrix.cols + col], onCommit: {
                             for i in 0..<contents.count {
                                 if let value = Double(contents[i]) {
                                     matrix[i] = value
@@ -31,6 +30,7 @@ public struct MatrixView: View {
                 }
             }
         }.padding(.all)
+        Text("Sum: \(sum(matrix.flat))")
     }
     
 //    init(_ rows: Int, _ cols: Int, fill: Double = 0) {
