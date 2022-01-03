@@ -11,7 +11,6 @@ import LASwift
 struct ContentView: View {
     
     @State var matrix: Matrix = Matrix(3,3)
-    @State var currentOperation: String = ""
     
     var body: some View {
         VStack {
