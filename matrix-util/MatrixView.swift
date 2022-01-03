@@ -22,7 +22,7 @@ public struct MatrixView: View {
                     }
                 }
             }
-        }
+        }.padding(.all)
     }
     
 //    init(_ rows: Int, _ cols: Int, fill: Double = 0) {
