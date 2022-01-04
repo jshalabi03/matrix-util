@@ -29,3 +29,7 @@ func getError(_ operation: MatrixOperation) -> InvalidOperation {
         return InvalidOperation.None
     }
 }
+
+func getCorrespondingErrorMessage(_ operation: MatrixOperation) -> String {
+    return getErrorMessage(getError(operation))
+}

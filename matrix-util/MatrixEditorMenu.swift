@@ -32,16 +32,16 @@ struct MatrixEditorMenu: View {
                 let currentValue = Double(currentValueString)!
                 do {
                     let matrixRes = try executeOperation(matrix, currentOperation, currentValue)
-                } catch is InvalidOperation {
-                    
-                }
-                matrix = matrixRes
-                contents = Array(repeating: "0", count: matrixRes.rows * matrixRes.cols)
-                for i in 0..<contents.count {
-                    contents[i] = String(format: "%.2f", matrixRes[i])
+                    matrix = matrixRes
+                    contents = Array(repeating: "0", count: matrixRes.rows * matrixRes.cols)
+                    for i in 0..<contents.count {
+                        contents[i] = String(format: "%.2f", matrixRes[i])
+                    }
+                } catch {
+                    invalidOperation = true
                 }
             }.alert(isPresented: $invalidOperation) {
-                Alert(title: "Invalid Operation", message: getErrorMessage(<#T##error: InvalidOperation##InvalidOperation#>))
+                Alert(title: Text("Invalid Operation"), message: Text(getCorrespondingErrorMessage(currentOperation)))
             }.padding(.all)
         }
     }
