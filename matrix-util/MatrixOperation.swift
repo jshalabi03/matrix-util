@@ -24,7 +24,7 @@ func operationToString(_ operation: MatrixOperation) -> String {
     }
 }
 
-func executeOperation(_ matrix: Matrix, _ operation: MatrixOperation, _ value: Double) -> Matrix {
+func executeOperation(_ matrix: Matrix, _ operation: MatrixOperation, _ value: Double) throws -> Matrix {
     switch(operation) {
     case .none:
         return matrix
@@ -32,6 +32,9 @@ func executeOperation(_ matrix: Matrix, _ operation: MatrixOperation, _ value: D
         let res: Matrix = Matrix(matrix.rows, matrix.cols, value)
         return res
     case .invert:
+        if (!isInvertible(matrix)) {
+            throw InvalidOperation.NonInvertible
+        }
         let res: Matrix = inv(matrix)
         return res
     case .scale:
