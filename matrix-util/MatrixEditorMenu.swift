@@ -21,6 +21,7 @@ struct MatrixEditorMenu: View {
             
             Picker("Operation", selection: $currentOperation) {
                 Text("Fill").tag(MatrixOperation.fill)
+                Text("Scale").tag(MatrixOperation.scale)
                 Text("Invert").tag(MatrixOperation.invert)
             }.padding(.all)
             
