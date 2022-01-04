@@ -29,8 +29,8 @@ struct MatrixEditorMenu: View {
             TextField("Value", text: $currentValueString).padding(.all)
             
             Button("Set") {
-                let currentValue = Double(currentValueString)!
                 do {
+                    let currentValue = Double(currentValueString)!
                     let matrixRes = try executeOperation(matrix, currentOperation, currentValue)
                     matrix = matrixRes
                     contents = Array(repeating: "0", count: matrixRes.rows * matrixRes.cols)
