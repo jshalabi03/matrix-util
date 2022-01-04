@@ -13,5 +13,5 @@ func roundToHundredths(_ num: Double) -> Double {
 }
 
 func isInvertible(_ matrix: Matrix) -> Bool {
-    return matrix.cols == matrix.rows && det(matrix) == 0
+    return matrix.cols == matrix.rows && det(matrix) != 0
 }
