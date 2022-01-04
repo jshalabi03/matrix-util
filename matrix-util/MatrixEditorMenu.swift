@@ -15,6 +15,7 @@ struct MatrixEditorMenu: View {
     @Binding var contents: [String]
     @State var currentOperation: MatrixOperation = MatrixOperation.fill
     @State var currentValueString: String = ""
+    @State var invalidOperation: Bool = false
     
     var body: some View {
         HStack {
@@ -29,12 +30,18 @@ struct MatrixEditorMenu: View {
             
             Button("Set") {
                 let currentValue = Double(currentValueString)!
-                let matrixRes = executeOperation(matrix, currentOperation, currentValue)
+                do {
+                    let matrixRes = try executeOperation(matrix, currentOperation, currentValue)
+                } catch is InvalidOperation {
+                    
+                }
                 matrix = matrixRes
                 contents = Array(repeating: "0", count: matrixRes.rows * matrixRes.cols)
                 for i in 0..<contents.count {
                     contents[i] = String(format: "%.2f", matrixRes[i])
                 }
+            }.alert(isPresented: $invalidOperation) {
+                Alert(title: "Invalid Operation", message: getErrorMessage(<#T##error: InvalidOperation##InvalidOperation#>))
             }.padding(.all)
         }
     }
