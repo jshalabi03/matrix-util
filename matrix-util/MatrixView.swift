@@ -26,6 +26,8 @@ public struct MatrixView: View {
                                 }
                             }
                         })
+                            .multilineTextAlignment(.center)
+                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black, lineWidth: 1))
                     }
                 }
             }
