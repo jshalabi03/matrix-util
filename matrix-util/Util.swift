@@ -15,3 +15,17 @@ func roundToHundredths(_ num: Double) -> Double {
 func isInvertible(_ matrix: Matrix) -> Bool {
     return matrix.cols == matrix.rows && det(matrix) != 0
 }
+
+// Returns number of non-zero decimal places (not significant digits)
+// If number of decimal places is higher than 2, then 2 is returned
+func numDecimals(_ num: Double) -> Int {
+    var hundred: Int = Int(num * 100)
+    if (hundred % 2 != 0) {
+        return 2
+    }
+    hundred /= 10
+    if (hundred % 2 != 0) {
+        return 1
+    }
+    return 0
+}
