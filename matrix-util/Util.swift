@@ -16,26 +16,18 @@ func isInvertible(_ matrix: Matrix) -> Bool {
     return matrix.cols == matrix.rows && det(matrix) != 0
 }
 
-func charAt(_ input: String, _ index: Int) -> String {
-    let char = input[input.index(input.startIndex, offsetBy: index)]
-    return String(char)
-}
-
 // Returns number of non-zero decimal places (not significant digits)
 // If number of decimal places is higher than 2, then 2 is returned
 func numDecimals(_ num: Double) -> Int {
-    var string: String = String(num)
-    if (string.firstIndex(of: ''))
-    var decimals: String = string.substring(from: string.firstIndex(of: '.'))
-    var hundred: UInt64 = UInt64(num * 100)
-    if (hundred % 10 != 0) {
-        return 2
+    let string = String(num)
+    let index = string.firstIndex(of: ".")!
+    let decimalString = string[index...]
+    let startIndex = decimalString.index(after: decimalString.startIndex)
+    let len = decimalString.count - 1
+    if (len == 1 && decimalString[startIndex] == "0") {
+        return 0
     }
-    hundred /= 10
-    if (hundred % 10 != 0) {
-        return 1
-    }
-    return 0
+    return len
 }
 
 // Returns truncated string of double given number of non-zero decimal places
