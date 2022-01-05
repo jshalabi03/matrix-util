@@ -19,7 +19,7 @@ func isInvertible(_ matrix: Matrix) -> Bool {
 // Returns number of non-zero decimal places (not significant digits)
 // If number of decimal places is higher than 2, then 2 is returned
 func numDecimals(_ num: Double) -> Int {
-    var hundred: Int = Int(num * 100)
+    var hundred: UInt64 = UInt64(num * 100)
     if (hundred % 10 != 0) {
         return 2
     }
