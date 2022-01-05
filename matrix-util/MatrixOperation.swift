@@ -13,14 +13,16 @@ enum MatrixOperation {
     case fill
     case scale
     case invert
+    case transpose
 }
 
 func operationToString(_ operation: MatrixOperation) -> String {
     switch (operation) {
-    case .none: return "None"
-    case .fill: return "Fill"
-    case .scale: return "Scale"
-    case .invert: return "Invert"
+    case .none:         return "None"
+    case .fill:         return "Fill"
+    case .scale:        return "Scale"
+    case .invert:       return "Invert"
+    case .transpose:    return "Transpose"
     }
 }
 
@@ -42,6 +44,9 @@ func executeOperation(_ matrix: Matrix, _ operation: MatrixOperation, _ value: D
         for i in 0..<res.flat.count {
             res[i] = value * res[i]
         }
+        return res
+    case .transpose:
+        let res: Matrix = transpose(matrix)
         return res
     }
     

@@ -19,14 +19,17 @@ public struct DimensionInput: View {
     
     public var body: some View {
         HStack {
-            TextField("Rows", text: $rowString).padding(.all)
-            TextField("Columns", text: $colString).padding(.all)
+            TextField("Rows", text: $rowString)
+                .padding(.all)
+            TextField("Columns", text: $colString)
+                .padding(.all)
             Button("Set", action: {
                 let rows = Int(rowString)!
                 let cols = Int(colString)!
                 matrix = Matrix(rows, cols)
                 contents = Array(repeating: "0", count: rows * cols)
-            }).padding(.all)
+            })
+                .padding(.all)
         }
     }
 }

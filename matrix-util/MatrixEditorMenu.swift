@@ -24,6 +24,7 @@ struct MatrixEditorMenu: View {
                 Text("Fill").tag(MatrixOperation.fill)
                 Text("Scale").tag(MatrixOperation.scale)
                 Text("Invert").tag(MatrixOperation.invert)
+                Text("Tranpose").tag(MatrixOperation.transpose)
             }.padding(.all)
             
             TextField("Value", text: $currentValueString).padding(.all)
