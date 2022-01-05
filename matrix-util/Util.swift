@@ -23,7 +23,8 @@ func numDecimals(_ num: Double) -> Int {
     let index = string.firstIndex(of: ".")!
     let decimalString = string[index...]
     let startIndex = decimalString.index(after: decimalString.startIndex)
-    let len = decimalString.count - 1
+    let count = decimalString.count - 1
+    let len = count > 2 ? 2 : count
     if (len == 1 && decimalString[startIndex] == "0") {
         return 0
     }
