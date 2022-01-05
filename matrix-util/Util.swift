@@ -29,3 +29,14 @@ func numDecimals(_ num: Double) -> Int {
     }
     return 0
 }
+
+// Returns truncated string of double given number of non-zero decimal places
+func getTruncatedString(_ num: Double) -> String {
+    let numDecimals = numDecimals(num)
+    switch(numDecimals) {
+    case 2:     return String(format: "%.2f", num)
+    case 1:     return String(format: "%.1f", num)
+    case 0:     return String(format: "%.0f", num)
+    default:    return String(format: "%.0f", num)
+    }
+}
