@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E708E4692784F09B0089732D /* InvalidOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E708E4682784F09B0089732D /* InvalidOperation.swift */; };
+		E70D10692787BD00007A8D8A /* StaticMatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D10682787BD00007A8D8A /* StaticMatrixView.swift */; };
 		E741B83427810A62000B7D37 /* matrix_utilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B83327810A62000B7D37 /* matrix_utilApp.swift */; };
 		E741B83627810A62000B7D37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E741B83527810A62000B7D37 /* ContentView.swift */; };
 		E741B83827810A63000B7D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E741B83727810A63000B7D37 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		E708E4682784F09B0089732D /* InvalidOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidOperation.swift; sourceTree = "<group>"; };
+		E70D10682787BD00007A8D8A /* StaticMatrixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticMatrixView.swift; sourceTree = "<group>"; };
 		E741B83027810A62000B7D37 /* matrix-util.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "matrix-util.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E741B83327810A62000B7D37 /* matrix_utilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matrix_utilApp.swift; sourceTree = "<group>"; };
 		E741B83527810A62000B7D37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				E741B8AA278243BC000B7D37 /* MatrixEditorMenu.swift */,
 				E741B8AE278245DC000B7D37 /* MatrixOperation.swift */,
 				E708E4682784F09B0089732D /* InvalidOperation.swift */,
+				E70D10682787BD00007A8D8A /* StaticMatrixView.swift */,
 			);
 			path = "matrix-util";
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E70D10692787BD00007A8D8A /* StaticMatrixView.swift in Sources */,
 				E741B83627810A62000B7D37 /* ContentView.swift in Sources */,
 				E708E4692784F09B0089732D /* InvalidOperation.swift in Sources */,
 				E741B83427810A62000B7D37 /* matrix_utilApp.swift in Sources */,

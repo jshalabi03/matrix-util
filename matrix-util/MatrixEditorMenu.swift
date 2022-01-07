@@ -16,6 +16,7 @@ struct MatrixEditorMenu: View {
     @State var currentOperation: MatrixOperation = MatrixOperation.fill
     @State var currentValueString: String = ""
     @State var invalidOperation: Bool = false
+    @State var showPreview: Bool = false
     
     var body: some View {
         HStack {
@@ -29,21 +30,41 @@ struct MatrixEditorMenu: View {
             
             TextField("Value", text: $currentValueString).padding(.all)
             
-            Button("Set") {
-                do {
-                    let currentValue = Double(currentValueString)!
-                    let matrixRes = try executeOperation(matrix, currentOperation, currentValue)
-                    matrix = matrixRes
-                    contents = Array(repeating: "0", count: matrixRes.rows * matrixRes.cols)
-                    for i in 0..<contents.count {
-                        contents[i] = getTruncatedString(matrixRes[i])
+            VStack {
+                Button("Set") {
+                    do {
+                        let currentValue = Double(currentValueString)!
+                        let matrixRes = try executeOperation(matrix, currentOperation, currentValue)
+                        matrix = matrixRes
+                        contents = Array(repeating: "0", count: matrixRes.rows * matrixRes.cols)
+                        for i in 0..<contents.count {
+                            contents[i] = getTruncatedString(matrixRes[i])
+                        }
+                    } catch {
+                        invalidOperation = true
                     }
-                } catch {
-                    invalidOperation = true
+                }.alert(isPresented: $invalidOperation) {
+                    Alert(title: Text("Invalid Operation"), message: Text(getCorrespondingErrorMessage(currentOperation)))
                 }
-            }.alert(isPresented: $invalidOperation) {
-                Alert(title: Text("Invalid Operation"), message: Text(getCorrespondingErrorMessage(currentOperation)))
-            }.padding(.all)
+                
+                Button("Preview") {
+                    showPreview = true
+                }.popover(isPresented: $showPreview) {
+                    
+                    let currentValue = Double(currentValueString)!
+                    let matrixRes = executeOperationAbsolute(matrix, currentOperation, currentValue)
+                    
+                    Text("Preview")
+                        .font(.headline)
+                        .padding()
+                    
+                    StaticMatrixView(matrix: matrixRes)
+                    
+                    Button("Dismiss") {
+                        showPreview = false
+                    }
+                }
+            }
         }
     }
 }

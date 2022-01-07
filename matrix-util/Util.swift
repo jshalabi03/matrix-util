@@ -41,3 +41,20 @@ func getTruncatedString(_ num: Double) -> String {
     default:    return String(format: "%.0f", num)
     }
 }
+
+func executeOperationAbsolute(_ matrix: Matrix, _ operation: MatrixOperation, _ value: Double) -> Matrix {
+    do {
+        let res = try executeOperation(matrix, operation, value)
+        return res
+    } catch {
+        return Matrix(3,3)
+    }
+}
+
+func getAssociatedContentsArray(_ matrix: Matrix) -> [String] {
+    var contents = Array(repeating: "0", count: matrix.rows * matrix.cols)
+    for i in 0..<contents.count {
+        contents[i] = getTruncatedString(matrix[i])
+    }
+    return contents
+}
